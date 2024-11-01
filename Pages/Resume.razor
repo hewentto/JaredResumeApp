@@ -1,0 +1,65 @@
+@page "/"
+
+@functions {
+    public class Portfolio
+    {
+        public string FullName { get; set; } = "JARED DENNING";
+        public string Title { get; set; } = ".NET Software Engineer";
+        public string Location { get; set; } = "American Fork, Utah";
+        public string PhoneNumber { get; set; } = "405-822-7237";
+        public string Email { get; set; } = "jared@denningtech.com";
+        public string AboutMe { get; set; } = "As a highly motivated and detail-oriented .NET Software Engineer, I bring a robust three-year track record of crafting scalable and efficient software solutions. My expertise lies in leveraging the power of .NET, C#, and Azure to meet and exceed project goals. I am proficient in all phases of software development, from initial design and testing to deployment, ensuring a seamless and effective end-product. My strong background in data science further empowers me to tackle complex challenges and deliver data-driven results that drive success.";
+        public string Education { get; set; } = "BS Computer Science (Emphasis in Data Science), Brigham Young University - Idaho, Rexburg, 2023";
+        public List<string> Skills { get; set; } = new List<string>() { "C#", "Azure", "Python", ".NET Framework", "Bootstrap", "MVC/MVVM Architecture", "Javascript", "Angular", "Cloud Services (Azure/AWS)", "Agile" };
+        public List<string> WorkExperience { get; set; } = new List<string>()
+        {
+            "Cloud and API Development: Designed and implemented cloud services using .NET, handling file uploads, customer portal pages, and API integrations (e.g., Pipedrive). Utilized API keys and authentication mechanisms to secure cloud services and ensure data integrity.",
+            "Full-stack Development: Worked on various full-stack projects, including Dashboard Features, Test Automation, and Cloud Service, utilizing .NET, C#, and relevant frameworks. Collaborated with cross-functional teams to design, develop, and deploy software solutions, ensuring alignment with business requirements and technical standards.",
+            "DevOps and CI/CD: Collaborated on the development and maintenance of CI/CD pipelines using Azure DevOps and Github, ensuring smooth deployment and testing processes.",
+            "Testing and Quality Assurance: Developed and updated unit tests to the latest version of MSTestV2, ensuring high-quality code and adherence to best practices. Integrated automated testing into CI/CD pipelines, ensuring seamless testing and deployment processes.",
+            "Database and Data Management: Designed and implemented database schema updates (e.g., version 14). Developed data models and APIs for storing and retrieving data in SQL Databases linked to AngularJS front end.",
+            "Browser Extension Development: Created cross-platform browser extensions. Developed and updated browser extensions for Chrome, Edge, and other browsers, ensuring compatibility and functionality.",
+            "Emerging Technologies: Developed internal tools utilizing OpenAI and ChatGPT, significantly reducing developer workload and increasing efficiency."
+        };
+    }
+}
+
+@{ 
+    var resume = new Portfolio();
+}
+
+<h1>@resume.FullName</h1>
+<h3>@resume.Title</h3>
+<p>@resume.Location</p>
+<p>@resume.PhoneNumber</p>
+<p>@resume.Email</p>
+
+<section>
+    <h2>About Me</h2>
+    <p>@resume.AboutMe</p>
+</section>
+
+<section>
+    <h2>Education</h2>
+    <p>@resume.Education</p>
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <ul>
+        @foreach (var skill in resume.Skills)
+        {
+            <li>@skill</li>
+        }
+    </ul>
+</section>
+
+<section>
+    <h2>Work Experience</h2>
+    <ul>
+        @foreach (var experience in resume.WorkExperience)
+        {
+            <li>@experience</li>
+        }
+    </ul>
+</section>

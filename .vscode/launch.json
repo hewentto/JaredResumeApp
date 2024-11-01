@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch and Debug Standalone Blazor WebAssembly App",
+            "browser": "chrome",
+            "type": "blazorwasm",
+            "request": "launch",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
