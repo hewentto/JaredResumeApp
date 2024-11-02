@@ -19,18 +19,26 @@ jobs:
         with:
           submodules: true
           lfs: false
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.x' # Adjust this if you're using a different .NET version
+
+      - name: Build the application
+        run: dotnet publish --configuration Release
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_CLIFF_04514A61E }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (e.g., PR comments)
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "Api" # Api source code path - optional
-          output_location: "wwwroot" # Built app content directory - optional
+          output_location: "bin/Release/net8.0/publish/wwwroot" # Adjust to match your build output for Blazor
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
