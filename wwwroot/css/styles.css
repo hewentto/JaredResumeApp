@@ -96,6 +96,7 @@ section ul {
 /* Work Experience */
 .experience-item {
     margin-bottom: 30px;
+    display: flex;
 }
 
 .experience-item p {
@@ -106,7 +107,6 @@ section ul {
     content: "•";
     color: #2980b9;
     font-weight: bold;
-    display: inline-block;
     width: 20px;
 }
 
