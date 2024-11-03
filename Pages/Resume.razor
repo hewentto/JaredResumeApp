@@ -13,7 +13,7 @@
         public string Email { get; set; } = "jared@denningtech.com";
         public string AboutMe { get; set; } = "As a highly motivated and detail-oriented .NET Software Engineer, I bring a robust three-year track record of crafting scalable and efficient software solutions. My expertise lies in leveraging the power of .NET, C#, and Azure to meet and exceed project goals. I am proficient in all phases of software development, from initial design and testing to deployment, ensuring a seamless and effective end-product. My strong background in data science further empowers me to tackle complex challenges and deliver data-driven results that drive success.";
         public string Education { get; set; } = "BS Computer Science (Emphasis in Data Science), Brigham Young University - Idaho, Rexburg, 2023";
-        public List<string> Skills { get; set; } = new List<string>() { "C#", "Azure", "Python", ".NET Framework", "Bootstrap", "MVC/MVVM Architecture", "JavaScript", "Angular", "Cloud Services (Azure/AWS)", "Agile" };
+        public List<string> Skills { get; set; } = new List<string>() { "ASP.NET", "C#", "Azure", "Python", ".NET Framework", "Bootstrap", "MVC/MVVM Architecture", "JavaScript", "Angular", "Cloud Services (Azure)", "Agile", "Blazor","SQL","EF Core","Git" };
         public List<string> WorkExperience { get; set; } = new List<string>()
         {
             "Cloud and API Development: Designed and implemented cloud services using .NET, handling file uploads, customer portal pages, and API integrations (e.g., Pipedrive). Utilized API keys and authentication mechanisms to secure cloud services and ensure data integrity.",
@@ -75,6 +75,16 @@
         </p>
     </header>
 
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            @foreach (var skill in resume.Skills)
+            {
+                <li>@skill</li>
+            }
+        </ul>
+    </section>
+
     <section id="about-me">
         <h2>About Me</h2>
         <p>@resume.AboutMe</p>
@@ -85,15 +95,6 @@
         <p>@resume.Education</p>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            @foreach (var skill in resume.Skills)
-            {
-                <li>@skill</li>
-            }
-        </ul>
-    </section>
 
     <section id="work-experience">
         <h2>Work Experience</h2>
