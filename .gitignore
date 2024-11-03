@@ -1,0 +1,26 @@
+# Ignore bin and obj directories
+bin/
+obj/
+
+# Visual Studio specific files
+.vs/
+*.suo
+
+# User-specific files
+*.user
+
+# VS Code settings
+.vscode/
+
+# Assembly and MSBuild files
+*.GeneratedMSBuildEditorConfig
+*.AssemblyInfo.cs
+
+# Other build artifacts
+*.dll
+*.exe
+*.pdb
+*.log
+
+# Publish outputs
+publish/
