@@ -11,18 +11,19 @@
         public string Location { get; set; } = "American Fork, Utah";
         public string PhoneNumber { get; set; } = "405-822-7237";
         public string Email { get; set; } = "jared@denningtech.com";
-        public string AboutMe { get; set; } = "As a highly motivated and detail-oriented .NET Software Engineer, I bring a robust three-year track record of crafting scalable and efficient software solutions. My expertise lies in leveraging the power of .NET, C#, and Azure to meet and exceed project goals. I am proficient in all phases of software development, from initial design and testing to deployment, ensuring a seamless and effective end-product. My strong background in data science further empowers me to tackle complex challenges and deliver data-driven results that drive success.";
-        public string Education { get; set; } = "BS Computer Science (Emphasis in Data Science), Brigham Young University - Idaho, Rexburg, 2023";
-        public List<string> Skills { get; set; } = new List<string>() { "ASP.NET", "C#", "Azure", "Python", ".NET Framework", "Bootstrap", "MVC/MVVM Architecture", "JavaScript", "Angular", "Cloud Services (Azure)", "Agile", "Blazor","SQL","EF Core","Git" };
+        public string AboutMe { get; set; } = "Always Learning, Always Training. As a dedicated Full-Stack .NET Developer with over three years of experience, I specialize in designing and implementing scalable software solutions using .NET, C#, Azure, and Angular. Proficient in cloud development, DevOps, CI/CD pipelines, and database management, I ensure high uptime and performance in every project. Passionate about leveraging emerging technologies like OpenAI and ChatGPT, I am committed to continuous improvement and delivering innovative, data-driven results through collaborative problem-solving.";
+
+        public string Education { get; set; } = "BS Computer Science (Emphasis in Data Science), Brigham Young University - Idaho, Rexburg  ";
+        public List<string> Skills { get; set; } = new List<string>() { "ASP.NET", ".NET Framework", "C#", "Azure (Cloud Services)", "Entity Framework Core (EF Core)", "Azure Storage", "Azure Functions", "SQL", "Blazor", "MVC Architecture", "Windows Presentation Foundation (WPF)", "Angular", "JavaScript", "Bootstrap", "Python", "C++", "Git", "Agile Methodologies", "Microsoft SQL Server Management Studio" };
         public List<string> WorkExperience { get; set; } = new List<string>()
         {
-            "Cloud and API Development: Designed and implemented cloud services using .NET, handling file uploads, customer portal pages, and API integrations (e.g., Pipedrive). Utilized API keys and authentication mechanisms to secure cloud services and ensure data integrity.",
-            "Full-stack Development: Worked on various full-stack projects, including Dashboard Features, Test Automation, and Cloud Service, utilizing .NET, C#, and relevant frameworks. Collaborated with cross-functional teams to design, develop, and deploy software solutions, ensuring alignment with business requirements and technical standards.",
+            "Cloud Development: Managed Browsium’s cloud service for 99.9% uptime on Azure. Incorporated Azure Functions and Hangfire background tasks triggers. Met with other departments, gathering feature requirements and implemented them.",
+            "Full-stack Development: Worked on various full-stack projects, including Dashboard Features and Test Automation, utilizing .NET, C#, and relevant MVC frameworks.",
             "DevOps and CI/CD: Collaborated on the development and maintenance of CI/CD pipelines using Azure DevOps and GitHub, ensuring smooth deployment and testing processes.",
-            "Testing and Quality Assurance: Developed and updated unit tests to the latest version of MSTestV2, ensuring high-quality code and adherence to best practices. Integrated automated testing into CI/CD pipelines, ensuring seamless testing and deployment processes.",
-            "Database and Data Management: Designed and implemented database schema updates (e.g., version 14). Developed data models and APIs for storing and retrieving data in SQL Databases linked to AngularJS front end.",
-            "Browser Extension Development: Created cross-platform browser extensions. Developed and updated browser extensions for Chrome, Edge, and other browsers, ensuring compatibility and functionality.",
-            "Emerging Technologies: Developed internal tools utilizing OpenAI and ChatGPT, significantly reducing developer workload and increasing efficiency."
+            "Testing and Quality Assurance: Developed and updated over 250 unit tests using MSTestV2, increasing code coverage from 50% to 70% and ensuring high-quality, maintainable code. Implemented best practices for automated testing, which reduced bug rates in production by 15% and facilitated smoother code reviews.",
+            "Database and Data Management: Designed and implemented database schema updates using SQL Server and Microsoft SQL Server Management Studio, enhancing data integrity and improving query performance. Developed comprehensive data models and RESTful APIs for efficient CRUD operations using EF Core and Web API 2. Seamlessly integrated SQL databases with Angular front-end applications.",
+            "Browser Extension Development: Migrated cross-platform browser extensions to MV3. Developed and updated browser extensions for Chrome, Edge, Firefox, and Safari, ensuring compatibility and functionality.",
+            "Emerging Technologies: Leveraged OpenAI and ChatGPT to develop internal tools that generated 1,200 accurate, JSON-formatted definitions. These tools automated the definition creation process, reducing manual effort by over 50%. This innovation enhanced product integration and accelerated development cycles."
         };
     }
 
@@ -101,7 +102,7 @@
         @foreach (var experience in resume.WorkExperience)
         {
             <article class="experience-item">
-                <p>@experience</p>
+                <p><b>@experience.Substring(0, experience.IndexOf(':') + 1)</b>@experience.Substring(experience.IndexOf(':') + 1)</p>
             </article>
         }
     </section>
