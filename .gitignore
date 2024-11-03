@@ -24,3 +24,4 @@ obj/
 
 # Publish outputs
 publish/
+obj/Debug/net8.0/JaredResumeApp.assets.cache
