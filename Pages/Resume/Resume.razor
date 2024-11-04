@@ -92,7 +92,15 @@
         @if (selectedSkill != null)
         {
             <div class="skill-description" @key="selectedSkill" @ref="descriptionElement">
-                <p>@selectedSkill.Description</p>
+                <p>@selectedSkill.Description
+                    @if (selectedSkill != null && selectedSkill.GitHubLink != null)
+                    {
+                        <a href="@selectedSkill.GitHubLink" 
+                        target="_blank" 
+                        class="github-link">
+                            <i class="bi bi-github" style="color: white; font-size: 1.25rem; margin-left: 1rem;"></i></a>
+                    }
+                </p>
             </div>
         }
 

@@ -14,7 +14,7 @@ namespace JaredResumeApp.Models
         public string Education { get; set; } = "BS Computer Science (Emphasis in Data Science), Brigham Young University - Idaho, Rexburg  ";
         public List<Skill> Skills { get; set; } = new List<Skill>()
                     {
-                new Skill { Name = "ASP.NET", Description = "This website was built using ASP.NET Core and Blazor WebAssembly! I also have experience with ASP.NET backend using Entity Framework Core, and Angular for the front-end." },
+                new Skill { Name = "ASP.NET", Description = "This website was built using ASP.NET Core and Blazor WebAssembly! I also have experience with ASP.NET backend using Entity Framework Core, and Angular for the front-end.", GitHubLink = "https://github.com/hewentto/JaredResumeApp" },
                 new Skill { Name = ".NET Framework", Description = "Developed robust desktop applications using the .NET Framework, implementing both client and service components with elevated permissions. This architecture enhanced security and functionality, enabling seamless communication between the client-side interface and background services requiring higher-level access."},
                 new Skill { Name = "C#", Description = "Worked 90% of the time with C# for 3 years. This web application was built using Razor Pages, which is a server-side templating system built into ASP.NET Core using C#." },
                 new Skill { Name = "Azure (Cloud Services)", Description = "This web application is hosted on Azure as an Azure Static Web App! I also managed Browsium's cloud service CI/CD pipelines using Azure DevOps and GitHub, ensuring smooth deployment and testing processes. I have also worked with Azure Functions, Azure Storage, and Azure SQL." },
