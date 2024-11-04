@@ -1,0 +1,119 @@
+@page "/"
+@inject IJSRuntime JS
+@inject NavigationManager NavigationManager
+@using JaredResumeApp.Models
+@using JaredResumeApp.Pages.SkillCard
+@code {
+    private string _message = "";
+    private Portfolio resume = new Portfolio();
+    private bool _isPrinting = false;
+    private Skill? selectedSkill;
+    private ElementReference descriptionElement;
+
+
+    private async Task DownloadPDF()
+    {
+        await JS.InvokeVoidAsync("window.open", "/Assets/Jared_Denning.pdf", "_blank");
+    }
+
+    private async Task ShareResume()
+    {
+
+        var url = NavigationManager.Uri;
+        await JS.InvokeVoidAsync("copyToClipboard", url);
+        _message = "Link Copied!";
+        StateHasChanged();
+        await Task.Delay(1000);
+        _message = "";
+        StateHasChanged();
+    }
+
+    private async Task ShowSkillDescription(Skill skill)
+    {
+        if (selectedSkill != null)
+        {
+            // Add leaving class to trigger fade out
+            await JS.InvokeVoidAsync("addFadeOutClass", descriptionElement);
+            // Wait for animation
+            await Task.Delay(300);
+        }
+        if (selectedSkill == skill)
+        {
+            selectedSkill = null;
+        }
+        else selectedSkill = skill;
+        Console.WriteLine(skill.Name);
+        StateHasChanged();
+    }
+}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+</head>
+
+<div id="action-buttons" class="@(_isPrinting ? "d-none" : "")">
+    <button @onclick="DownloadPDF" class="btn btn-primary">
+        <i class="bi bi-download"></i>
+    </button>
+    <button @onclick="ShareResume" class="btn btn-primary">
+        <i class="bi bi-share"></i>
+        <span class="message">@_message</span>
+    </button>
+</div>
+
+<div id="resume" class="@(_isPrinting ? "print-only" : "")">
+    <header>
+        <h1>@resume.FullName</h1>
+        <h3>@resume.Title</h3>
+        <p>
+            <span>@resume.Location</span> |
+            <span>@resume.PhoneNumber</span> |
+            <a href="mailto:@resume.Email">@resume.Email</a>
+        </p>
+    </header>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            @foreach (var skill in resume.Skills)
+            {
+                <SkillCard
+                 Skill="@skill.Name" 
+                 Description="@skill.Description" 
+                 GitHubLink="@skill.GitHubLink" 
+                 OnClick="@(() => ShowSkillDescription(skill))" 
+                 IsActive="@(selectedSkill == skill)" />
+            }
+        </ul>
+
+        @if (selectedSkill != null)
+        {
+            <div class="skill-description" @key="selectedSkill" @ref="descriptionElement">
+                <p>@selectedSkill.Description</p>
+            </div>
+        }
+
+    </section>
+
+    <section id="about-me">
+        <h2>About Me</h2>
+        <p>@resume.AboutMe</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p>@resume.Education</p>
+    </section>
+
+
+    <section id="work-experience">
+        <h2>Work Experience</h2>
+        @foreach (var experience in resume.WorkExperience)
+        {
+            <article class="experience-item">
+                <p><b>@experience.Substring(0, experience.IndexOf(':') + 1)</b>@experience.Substring(experience.IndexOf(':') + 1)</p>
+            </article>
+        }
+    </section>
+</div>

@@ -77,20 +77,54 @@ section ul {
 }
 
 /* Skills */
-#skills ul {
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-#skills li {
-    display: inline-block;
+@keyframes pull-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.skill-description {
+    margin-top: 1rem;
     background-color: #2980b9;
     color: #fff;
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 20px;
-    font-size: 0.9em;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    animation: pull-down 0.5s ease-in-out;
+}
+
+.skill-description.fade-out {
+    animation: fade-out 0.3s ease-in-out forwards;
+}
+
+.skill-description p {
+    color: inherit;
+    margin: 0;
 }
 
 /* Work Experience */
