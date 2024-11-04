@@ -218,3 +218,33 @@ section ul {
     justify-content: center;
     gap: .5rem;
 }
+
+/* Style for Tech Stack Section */
+.tech-stack {
+    text-align: center;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 20px;
+    font-size: 2rem;
+    color: #2980b9; /* Adjust color as needed */
+}
+
+.tech-icon i {
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+
+.tech-icon span {
+    font-size: 1rem;
+    margin-top: 4px;
+}
