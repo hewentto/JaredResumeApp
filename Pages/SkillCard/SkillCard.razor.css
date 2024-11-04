@@ -1,0 +1,51 @@
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    /* Pause for the remainder of the animation */
+}
+
+@keyframes scaleDown {
+    0% { transform: scale(1); }
+    100% { transform: scale(.9); }
+}
+
+.skill-card {
+    display: inline-block;
+    background-color: #2980b9;
+    color: #fff;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    animation: pulse 4s infinite;
+}
+
+.skill-card.active {
+    background-color: #fff;
+    color: #2980b9;
+    outline: 2px solid #2980b9;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Add staggered delays for each item */
+#skills li:nth-child(2n) {
+    animation-delay: 0.5s;
+}
+
+#skills li:nth-child(3n) {
+    animation-delay: 1s;
+}
+
+#skills li:nth-child(4n) {
+    animation-delay: .5s;
+}
+
+#skills li:nth-child(5n) {
+    animation-delay: 1s;
+}
+
+#skills li:hover {
+    animation: none;
+    transform: scale(1.05);
+}

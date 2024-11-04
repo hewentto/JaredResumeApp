@@ -4,3 +4,8 @@ window.copyToClipboard = (text) => {
         .then(() => console.log("Text copied to clipboard"))
         .catch(err => console.error("Could not copy text: ", err));
 };
+
+window.addFadeOutClass = (element) => {
+    element.classList.add("fade-out");
+};
+

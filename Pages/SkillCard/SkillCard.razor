@@ -1,0 +1,31 @@
+<div @onclick="HandleClick">
+    <span class="skill-card @(IsActive ? "active" : "")">@Skill</span>
+</div>
+
+@code {
+    [Parameter]
+    public required string Skill { get; set; }
+
+    [Parameter]
+    public required string Description { get; set; }
+
+    [Parameter]
+    public string? GitHubLink { get; set; }
+
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+
+    [Parameter]
+    public bool IsActive { get; set; }
+
+    private async void HandleClick()
+    {
+        Console.WriteLine(Skill);
+        await OnClick.InvokeAsync();
+    }
+
+
+    protected override void OnInitialized()
+    {
+    }
+}
