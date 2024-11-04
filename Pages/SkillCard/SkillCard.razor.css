@@ -18,7 +18,6 @@
     border-radius: 20px;
     font-size: 0.9em;
     cursor: pointer;
-    animation: pulse 4s infinite;
 }
 
 .skill-card.active {
@@ -28,24 +27,3 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-/* Add staggered delays for each item */
-#skills li:nth-child(2n) {
-    animation-delay: 0.5s;
-}
-
-#skills li:nth-child(3n) {
-    animation-delay: 1s;
-}
-
-#skills li:nth-child(4n) {
-    animation-delay: .5s;
-}
-
-#skills li:nth-child(5n) {
-    animation-delay: 1s;
-}
-
-#skills li:hover {
-    animation: none;
-    transform: scale(1.05);
-}

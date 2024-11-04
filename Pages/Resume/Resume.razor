@@ -78,12 +78,14 @@
         <ul class="skills-list">
             @foreach (var skill in resume.Skills)
             {
-                <SkillCard
-                 Skill="@skill.Name" 
-                 Description="@skill.Description" 
-                 GitHubLink="@skill.GitHubLink" 
-                 OnClick="@(() => ShowSkillDescription(skill))" 
-                 IsActive="@(selectedSkill == skill)" />
+                <li class="skill-item">
+                    <SkillCard
+                    Skill="@skill.Name" 
+                    Description="@skill.Description" 
+                    GitHubLink="@skill.GitHubLink" 
+                    OnClick="@(() => ShowSkillDescription(skill))" 
+                    IsActive="@(selectedSkill == skill)" />
+                </li>
             }
         </ul>
 

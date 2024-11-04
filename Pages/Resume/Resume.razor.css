@@ -108,6 +108,11 @@ section ul {
     }
 }
 
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
 .skill-description {
     margin-top: 1rem;
     background-color: #2980b9;
@@ -125,6 +130,25 @@ section ul {
 .skill-description p {
     color: inherit;
     margin: 0;
+}
+.skill-item {
+    animation: pulse 4s infinite;
+}
+
+.skill-item:nth-child(2n) {
+    animation-delay: 0.1s;
+}
+
+.skill-item:nth-child(3n) {
+    animation-delay: .5s;
+}
+
+.skill-item:nth-child(4n) {
+    animation-delay: .3s;
+}
+
+.skill-item:nth-child(5n) {
+    animation-delay: .7s;
 }
 
 /* Work Experience */
