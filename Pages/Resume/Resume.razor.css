@@ -110,7 +110,7 @@ section ul {
 
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    50% { transform: scale(1.03); }
 }
 
 .skill-description {
@@ -133,6 +133,10 @@ section ul {
 }
 .skill-item {
     animation: pulse 4s infinite;
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
 }
 
 .skill-item:nth-child(2n) {
