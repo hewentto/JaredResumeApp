@@ -61,7 +61,8 @@
         new Technology { Name = "HTML5", ImageFilePath = "/Assets/Svg/html5.svg" },
         new Technology { Name = "CSS3", ImageFilePath = "/Assets/Svg/css3.svg" },
         new Technology { Name = "Bootstrap", ImageFilePath = "/Assets/Svg/bootstrap.svg" },
-        new Technology { Name = "Azure", ImageFilePath = "/Assets/Svg/azure.svg" },
+        new Technology { Name = "Github", ImageFilePath = "/Assets/Svg/github.svg" },
+        new Technology { Name = "Hosted on Azure", ImageFilePath = "/Assets/Svg/azure.svg" },
         // Add more technologies as needed
     };
 }
@@ -83,13 +84,13 @@
         <span class="message">@_message</span>
     </button>
 
-    <a href="https://github.com/hewentto" target="_blank" class="btn btn-primary">
-        <i class="bi bi-github" style="color: white;"></i>
-    </a>
-
     <button @onclick="OpenTechStackModal" class="btn btn-primary" data-bs-toggle="tooltip" title="View Tech Stack">
         <i class="bi bi-stack"></i>
     </button>
+
+    <a href="https://github.com/hewentto" target="_blank" class="btn btn-primary">
+        <i class="bi bi-github" style="color: white;"></i>
+    </a>
 </div>
 
 <!-- Tech Stack Modal -->
