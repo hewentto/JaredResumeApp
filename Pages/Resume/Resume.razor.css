@@ -157,10 +157,26 @@ section ul {
 }
 
 /* Work Experience Timeline */
+.timeline-container {
+    position: relative;
+    margin-left: 0.75rem;
+}
+
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 7px;
+    width: 4px;
+    background: #2980b9;
+}
+
 .timeline-item {
     position: relative;
-    border-left: 4px solid #2980b9;
-    padding-left: 1rem;
+    padding-left: 2rem;
+    border: none;
+    background: transparent;
     animation: fade-in-up 0.5s ease;
 }
 
@@ -171,7 +187,7 @@ section ul {
 .timeline-item::before {
     content: "";
     position: absolute;
-    left: -8px;
+    left: -1px;
     top: 12px;
     width: 15px;
     height: 15px;
