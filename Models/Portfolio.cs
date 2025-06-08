@@ -34,16 +34,48 @@ namespace JaredResumeApp.Models
                 new Skill { Name = "Agile Methodologies", Description = "I have utilized Agile methodologies for the past 3 years. I have experience working in an Agile environment, and have experience with Agile tools such as Azure DevOps." },
                 new Skill { Name = "Microsoft SQL Server Management Studio", Description = "I have used SSMS to design and implement database schema updates, sproc changes, and more." }
             };
-        public List<string> WorkExperience { get; set; } = new List<string>()
+        public List<WorkExperienceItem> WorkExperience { get; set; } = new List<WorkExperienceItem>()
         {
-            "Desktop Development: As an Engineer at Browsium I helped develop a desktop virtualization solution using C++ and .NET, enabling secure access to Windows applications. This project involved creating a lightweight client application, a service for elevated privileges  and a robust server infrastructure to deliver virtualized applications seamlessly.",
-            "Cloud Development: Managed Browsium’s cloud service for 99.9% uptime on Azure. Incorporated Azure Functions and Hangfire background tasks triggers. Met with other departments, gathering feature requirements and implemented them.",
-            "Full-stack Development: Worked on various full-stack projects, including Dashboard Features and Test Automation, utilizing .NET, C#, and relevant MVC frameworks.",
-            "DevOps and CI/CD: Collaborated on the development and maintenance of CI/CD pipelines using Azure DevOps and GitHub, ensuring smooth deployment and testing processes.",
-            "Testing and Quality Assurance: Developed and updated hundreds of unit tests using MSTestV2 and xUnit, increasing code coverage from 50% to 70% and ensuring high-quality, maintainable code. Implemented best practices for automated testing in new applications giving a solid foundation with 100% code coverage.",
-            "Database and Data Management: Designed and implemented database schema updates using SQL Server and Microsoft SQL Server Management Studio, enhancing data integrity and improving query performance. Developed comprehensive data models and RESTful APIs for efficient CRUD operations using EF Core and Web API 2. Seamlessly integrated SQL databases with Angular front-end applications.",
-            "Browser Extension Development: Migrated cross-platform browser extensions to MV3. Developed and updated browser extensions for Chrome, Edge, Firefox, and Safari, ensuring compatibility and functionality.",
-            "Emerging Technologies: Leveraged OpenAI and ChatGPT to develop internal tools that generated 1,200 accurate, JSON-formatted definitions. These tools automated the definition creation process, reducing manual effort by over 50%. This innovation enhanced product integration and accelerated development cycles."
+            new WorkExperienceItem
+            {
+                Title = "Desktop Development",
+                Description = "As an Engineer at Browsium I helped develop a desktop virtualization solution using C++ and .NET, enabling secure access to Windows applications. This project involved creating a lightweight client application, a service for elevated privileges  and a robust server infrastructure to deliver virtualized applications seamlessly."
+            },
+            new WorkExperienceItem
+            {
+                Title = "Cloud Development",
+                Description = "Managed Browsium’s cloud service for 99.9% uptime on Azure. Incorporated Azure Functions and Hangfire background tasks triggers. Met with other departments, gathering feature requirements and implemented them."
+            },
+            new WorkExperienceItem
+            {
+                Title = "Full-stack Development",
+                Description = "Worked on various full-stack projects, including Dashboard Features and Test Automation, utilizing .NET, C#, and relevant MVC frameworks."
+            },
+            new WorkExperienceItem
+            {
+                Title = "DevOps and CI/CD",
+                Description = "Collaborated on the development and maintenance of CI/CD pipelines using Azure DevOps and GitHub, ensuring smooth deployment and testing processes."
+            },
+            new WorkExperienceItem
+            {
+                Title = "Testing and Quality Assurance",
+                Description = "Developed and updated hundreds of unit tests using MSTestV2 and xUnit, increasing code coverage from 50% to 70% and ensuring high-quality, maintainable code. Implemented best practices for automated testing in new applications giving a solid foundation with 100% code coverage."
+            },
+            new WorkExperienceItem
+            {
+                Title = "Database and Data Management",
+                Description = "Designed and implemented database schema updates using SQL Server and Microsoft SQL Server Management Studio, enhancing data integrity and improving query performance. Developed comprehensive data models and RESTful APIs for efficient CRUD operations using EF Core and Web API 2. Seamlessly integrated SQL databases with Angular front-end applications."
+            },
+            new WorkExperienceItem
+            {
+                Title = "Browser Extension Development",
+                Description = "Migrated cross-platform browser extensions to MV3. Developed and updated browser extensions for Chrome, Edge, Firefox, and Safari, ensuring compatibility and functionality."
+            },
+            new WorkExperienceItem
+            {
+                Title = "Emerging Technologies",
+                Description = "Leveraged OpenAI and ChatGPT to develop internal tools that generated 1,200 accurate, JSON-formatted definitions. These tools automated the definition creation process, reducing manual effort by over 50%. This innovation enhanced product integration and accelerated development cycles."
+            }
         };
     }
 }
